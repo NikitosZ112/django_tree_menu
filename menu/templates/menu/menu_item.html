@@ -1,0 +1,13 @@
+<li class="menu-item {% if item.item == active_item %}active{% endif %} {% if item.item.id in expanded_items or not item.item.parent %}expanded{% else %}collapsed{% endif %}">
+    <a href="{{ item.item.get_url }}">
+        {% if item.item.icon %}<i class="{{ item.item.icon }}"></i>{% endif %}
+        {{ item.item.title }}
+    </a>
+    {% if item.has_children and item.item.id in expanded_items %}
+    <ul class="submenu">
+        {% for child in item.children %}
+            {% include 'menu/menu_item.html' with item=child %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+</li>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+<h1><i class="fas fa-envelope"></i> Контакты</h1>
+<div class="contact-info">
+    <p><i class="fas fa-phone"></i> Телефон: +7 (123) 456-7890</p>
+    <p><i class="fas fa-envelope"></i> Email: info@example.com</p>
+    <p><i class="fas fa-map-marker-alt"></i> Адрес: г. Москва, ул. Примерная, 123</p>
+</div>
+
+<h2>Форма обратной связи</h2>
+<form>
+    <input type="text" placeholder="Ваше имя" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Сообщение"></textarea>
+    <button type="submit">Отправить</button>
+</form>
+{% endblock %}
